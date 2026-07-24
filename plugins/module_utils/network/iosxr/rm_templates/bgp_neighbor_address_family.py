@@ -357,7 +357,9 @@ class Bgp_neighbor_address_familyTemplate(NetworkTemplate):
                                 "address_family": {
                                     '{{"address_family_" + afi + "_" + safi}}': {
                                         "default_originate": {
-                                            "set": "{{True if default_originate is defined and route_policy is not defined and inheritance_disable is not defined}}",
+                                            "set": "{{True if default_originate is defined "
+                                                   "and route_policy is not defined "
+                                                   "and inheritance_disable is not defined}}",
                                             "route_policy": "{{route_policy}}",
                                             "inheritance_disable": "{{True if inheritance_disable is defined}}",
                                         },
