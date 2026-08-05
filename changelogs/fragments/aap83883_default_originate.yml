@@ -1,4 +1,0 @@
-bugfixes:
-  - iosxr_bgp_neighbor_address_family - Fix fact gathering crash when neighbors
-    use ``default-originate route-policy`` or ``default-originate inheritance-disable``
-    by only setting ``set`` for the bare ``default-originate`` form.

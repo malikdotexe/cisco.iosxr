@@ -4,15 +4,24 @@ Cisco Iosxr Collection Release Notes
 
 .. contents:: Topics
 
+v12.5.0
+=======
+
+Bugfixes
+--------
+
+- iosxr_bgp_neighbor_address_family - Fix fact gathering crash when neighbors use ``default-originate route-policy`` or ``default-originate inheritance-disable`` by only setting ``set`` for the bare ``default-originate`` form.
+- netconf - Parse large XML config strings with ``huge_tree=True`` in ``edit_config`` to prevent lxml from rejecting payloads exceeding the default 10MB text-node limit.
+
 v12.4.0
 =======
 
 Minor Changes
 -------------
 
-- Fixed for iosxr_lldp_interfaces, iosxr_lldp_global, iosxr_lag_interfaces, iosxr_lacp_interfaces, iosxr_lacp, iosxr_l3_interfaces, iosxr_l2_interfaces, iosxr_interfaces, iosxr_acls, iosxr_static_routes, iosxr_ping,iosxr_banner, iosxr_config, iosxr_system, iosxr_command, iosxr_user, iosxr_netconf
-- For iosxr_vrf_interfaces, iosxr_vrf_global, iosxr_vrf_address_family, iosxr_snmp_server, iosxr_route_maps, iosxr_prefix_lists, iosxr_ospfv3, iosxr_ospfv2, iosxr_ospf_interfaces, iosxr_ntp_global, iosxr_logging_global, iosxr_hostname, iosxr_bgp_templates, iosxr_bgp_neighbor_address_family, iosxr_bgp_global, iosxr_bgp_address_family, iosxr_acl_interfaces modules ,fix will be done via netcommon ResourceModule.result change (Upstream to iosxr)
-- No changes for fail_json since it uses msg format already , except for ping module where currently warning is not being set.
+- Fixed for iosxr_lldp_interfaces, iosxr_lldp_global, iosxr_lag_interfaces, iosxr_lacp_interfaces, iosxr_lacp, iosxr_l3_interfaces, iosxr_l2_interfaces, iosxr_interfaces, iosxr_acls, iosxr_static_routes, iosxr_ping, iosxr_banner, iosxr_config, iosxr_system, iosxr_command, iosxr_user, iosxr_netconf
+- For iosxr_vrf_interfaces, iosxr_vrf_global, iosxr_vrf_address_family, iosxr_snmp_server, iosxr_route_maps, iosxr_prefix_lists, iosxr_ospfv3, iosxr_ospfv2, iosxr_ospf_interfaces, iosxr_ntp_global, iosxr_logging_global, iosxr_hostname, iosxr_bgp_templates, iosxr_bgp_neighbor_address_family, iosxr_bgp_global, iosxr_bgp_address_family, iosxr_acl_interfaces modules, fix will be done via netcommon ResourceModule.result change (Upstream to iosxr)
+- No changes for fail_json since it uses msg format already, except for ping module where currently warning is not being set.
 - Remediate deprecated 'to_bytes' from 'ansible.module_utils._text' and replaced with ansible.module_utils.common.text.converters.
 - Remediate deprecated 'to_text' from 'ansible.module_utils._text' and replaced with ansible.module_utils.common.text.converters.
 - Remediate deprecated ``warnings`` parameter in ``exit_json`` calls by using ``AnsibleModule.warn()`` across all iosxr modules to address deprecation warning from ansible-core 2.23.
