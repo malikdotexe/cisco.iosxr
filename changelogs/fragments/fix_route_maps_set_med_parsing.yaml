@@ -1,6 +1,0 @@
----
-bugfixes:
-  - "route_maps - Fix ``set med +<N>`` / ``set med -<N>`` parsing in
-    ``Route_mapsTemplate`` so that incremental MED statements using
-    device-native attached-sign syntax are no longer silently skipped
-    during fact gathering."
