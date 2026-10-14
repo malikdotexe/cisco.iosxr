@@ -9,3 +9,6 @@ exclude_paths:
   - changelogs/changelog.yaml
   # Offline Molecule/CISSHGO scenarios and fixtures (driver YAML + transcripts, not playbooks)
   - extensions/molecule
+
+warn_list:
+  - no-log-password
