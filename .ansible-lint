@@ -7,8 +7,12 @@ skip_list:
 exclude_paths:
   # Generated changelog (not a playbook)
   - changelogs/changelog.yaml
-  # Offline Molecule/CISSHGO scenarios and fixtures (driver YAML + transcripts, not playbooks)
-  - extensions/molecule
+  # CISSHGO transcript routing data: a platform/command -> transcript-file
+  # lookup table (top-level mapping, not a list of plays). ansible-lint's
+  # syntax-check fails fatally on it ("A playbook must be a list of plays")
+  # because the filename/location resembles a playbook, so it must stay
+  # excluded even on the production profile.
+  - extensions/molecule/cisshgo_fixtures/transcript_map.yaml
 
 warn_list:
   - no-log-password
